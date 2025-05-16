@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="trips_top_title">Prêt pour le prochain voyage&#160;?</string>
+    <string name="trips_empty_list_message">Cliquez sur le bouton + pour ajouter votre prochain voyage.</string>
+    <string name="search_trip_label">Rechercher un voyage</string>
+
+    <plurals name="trip_card_subtitle">
+        <item quantity="zero">Du %1$s au %2$s • %3$d jour</item>
+        <item quantity="one">Du %1$s au %2$s • %3$d jour</item>
+        <item quantity="other">Du %1$s au %2$s • %3$d jours</item>
+    </plurals>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search_folder_label">Rechercher un dossier</string>
+
+    <plurals name="trip_details_header_subtitle">
+        <item quantity="zero">Du %1$s au %2$s • %3$d jour</item>
+        <item quantity="one">Du %1$s au %2$s • %3$d jour</item>
+        <item quantity="other">Du %1$s au %2$s • %3$d jours</item>
+    </plurals>
+
+    <string name="delete_trip_alert_dialog_title">Suppression du voyage \"%1$s\"</string>
+    <string name="delete_trip_alert_dialog_subtitle">Confirmez-vous la suppression du voyage \"%1$s\"&#160;? Cette action est irréversible.</string>
+    <string name="delete_trip_alert_dialog_action_button">Supprimer le voyage</string>
+</resources>

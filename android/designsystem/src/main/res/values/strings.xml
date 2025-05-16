@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="travel_type_ticket_label">Billet</string>
+    <string name="travel_type_rental_label">Location véhicule</string>
+    <string name="travel_type_accommodation_label">Hébergement</string>
+    <string name="travel_type_others_label">Autre</string>
+
+    <plurals name="travel_state_incoming">
+        <item quantity="zero" formatted="true">Départ dans %1$d jour</item>
+        <item quantity="one" formatted="true">Départ dans %1$d jour</item>
+        <item quantity="other" formatted="true">Départ dans %1$d jours</item>
+    </plurals>
+    <string name="travel_state_pending">Voyage en cours</string>
+    <string name="travel_state_finished">Voyage terminé</string>
+
+    <string name="trip_date_picker_title">Indiquer les dates du voyage</string>
+    <string name="trip_departure_date_label">Date de départ</string>
+    <string name="trip_return_date_label">Date de retour</string>
+    <string name="cancel_action">Annuler</string>
+    <string name="confirm_action">Confirmer</string>
+
+    <string name="add_file_button">Ajouter un fichier</string>
+</resources>

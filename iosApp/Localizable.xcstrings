@@ -1,0 +1,38 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "app_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TravelCase"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TravelCase"
+          }
+        }
+      }
+    },
+    "Date de départ" : {
+
+    },
+    "Date de retour" : {
+
+    },
+    "Suppression de la page %lld" : {
+
+    },
+    "Suppression du dossier %@" : {
+
+    },
+    "Suppression du voyage %@" : {
+
+    }
+  },
+  "version" : "1.0"
+}

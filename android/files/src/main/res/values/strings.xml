@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="file_preview_download_action">Télécharger</string>
+    <string name="file_preview_share_action">Partager</string>
+    <string name="file_preview_delete_action">Supprimer</string>
+    <string name="file_preview_image_saved_message">Image enregistrée.</string>
+
+    <string name="file_preview_alert_dialog_title">Suppression de la page %1$d</string>
+    <string name="file_preview_alert_dialog_subtitle">Confirmez-vous la suppression de la page %1$d ? Cette action est irréversible.</string>
+    <string name="file_preview_alert_dialog_action_button">Supprimer le fichier</string>
+</resources>

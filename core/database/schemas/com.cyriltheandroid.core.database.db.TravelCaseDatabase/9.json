@@ -1,0 +1,201 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 9,
+    "identityHash": "356e14a238f711bf248364c8f9061936",
+    "entities": [
+      {
+        "tableName": "trips",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT NOT NULL, `country_code` TEXT NOT NULL, `banner_uri` TEXT, `creation_date` TEXT, `departure_date` TEXT, `return_date` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "countryCode",
+            "columnName": "country_code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bannerUri",
+            "columnName": "banner_uri",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "creationDate",
+            "columnName": "creation_date",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "departureDate",
+            "columnName": "departure_date",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "returnDate",
+            "columnName": "return_date",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "folders",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `tripId` INTEGER NOT NULL, `title` TEXT NOT NULL, `type` TEXT NOT NULL, `creationDate` TEXT NOT NULL, FOREIGN KEY(`tripId`) REFERENCES `trips`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tripId",
+            "columnName": "tripId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "creationDate",
+            "columnName": "creationDate",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_folders_tripId",
+            "unique": false,
+            "columnNames": [
+              "tripId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_folders_tripId` ON `${TABLE_NAME}` (`tripId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "trips",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "tripId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "files",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `folderId` INTEGER NOT NULL, `name` TEXT NOT NULL, `localPath` TEXT NOT NULL, `mimeType` TEXT NOT NULL, `creationDate` TEXT NOT NULL, FOREIGN KEY(`folderId`) REFERENCES `folders`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "folderId",
+            "columnName": "folderId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "localPath",
+            "columnName": "localPath",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mimeType",
+            "columnName": "mimeType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "creationDate",
+            "columnName": "creationDate",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_files_folderId",
+            "unique": false,
+            "columnNames": [
+              "folderId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_files_folderId` ON `${TABLE_NAME}` (`folderId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "folders",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "folderId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '356e14a238f711bf248364c8f9061936')"
+    ]
+  }
+}

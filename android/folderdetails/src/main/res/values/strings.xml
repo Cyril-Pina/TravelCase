@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="delete_folder_alert_dialog_title">Suppression du dossier \"%1$s\"</string>
+    <string name="delete_folder_alert_dialog_subtitle">Confirmez-vous la suppression du dossier \"%1$s\"&#160;? Cette action est irréversible.</string>
+    <string name="delete_folder_alert_dialog_action_button">Supprimer le dossier</string>
+    <string name="folder_images_saved_message">Images enregistrées.</string>
+</resources>
